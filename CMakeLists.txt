@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt : CMake project for vulkan_guide, include source and define
 # project specific logic here.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.15)
 
 project ("vulkan_guide")
 
@@ -17,6 +17,12 @@ add_subdirectory(src)
 
 
 find_program(GLSL_VALIDATOR glslangValidator HINTS /usr/bin /usr/local/bin $ENV{VULKAN_SDK}/Bin/ $ENV{VULKAN_SDK}/Bin32/)
+
+#Find SDL
+#list(APPEND CMAKE_PREFIX_PATH $ENV{VULKAN_SDK}/cmake) 
+#find_package(SDL2 REQUIRED)
+#include_directories(${PROJECT_NAME} ${SDL2_INCLUDE_DIRS})
+#target_link_libraries(${PROJECT_NAME} ${SDL2_LIBRARIES})
 
 ## find all the shader files under the shaders folder
 file(GLOB_RECURSE GLSL_SOURCE_FILES

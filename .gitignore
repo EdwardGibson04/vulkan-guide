@@ -1,2 +1,11 @@
 /build
 /bin
+/x64
+CMakeFiles/
+Debug/
+/out
+.vs/
+*.vcxproj*
+*.sln
+*.cmake
+CmakeCache.txt

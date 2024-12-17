@@ -1,4 +1,6 @@
 
+find_package(SDL2 REQUIRED CONFIG)
+
 # Add source to this project's executable.
 add_executable(vulkan_guide
     main.cpp
@@ -14,6 +16,7 @@ set_property(TARGET vulkan_guide PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "$<TARGE
 target_include_directories(vulkan_guide PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(vulkan_guide vkbootstrap vma glm tinyobjloader imgui stb_image)
 
-target_link_libraries(vulkan_guide Vulkan::Vulkan sdl2)
+target_link_libraries(vulkan_guide Vulkan::Vulkan SDL2::SDL2 SDL2::SDL2main)
+target_compile_features(vulkan_guide PRIVATE cxx_std_14)
 
 add_dependencies(vulkan_guide Shaders)
