@@ -118,6 +118,10 @@ public:
 	std::vector<ComputeEffect> backgroundEffects;
 	int currentBackgroundEffect{ 0 };
 
+	VkPipelineLayout _trianglePipelineLayout;
+	VkPipeline _trianglePipeline;
+
+
 private:
 
 	void init_vulkan();
@@ -139,6 +143,8 @@ private:
 
 	void draw_imgui(VkCommandBuffer cmd, VkImageView targetImageView);
 
+	void init_triangle_pipeline();
 
+	void draw_geometry(VkCommandBuffer cmd);
 
 };
