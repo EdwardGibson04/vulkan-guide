@@ -119,6 +119,8 @@ private:
 
 	void init_imgui();
 
+	void draw_imgui(VkCommandBuffer cmd, VkImageView targetImageView);
+
 
 
 };
